@@ -7,7 +7,7 @@ import (
 
 type AcceptingStates []int
 
-func (acceptingStates *AcceptingStates) Contains(state int) bool {
+func (acceptingStates *AcceptingStates) contains(state int) bool {
     for _, acceptingState := range *acceptingStates {
         if  state == acceptingState {
             return true
@@ -58,8 +58,7 @@ func (dfa *Dfa) Eval(str string) bool {
         }
     }
     
-    return dfa.acceptingStates.Contains(q)
-
+    return dfa.acceptingStates.contains(q)
 }
 
 func DfaDivisibleBy(modulus int) (Dfa, error) {

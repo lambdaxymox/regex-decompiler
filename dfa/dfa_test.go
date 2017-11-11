@@ -9,7 +9,7 @@ func bin(n int) string {
     return fmt.Sprintf("%b", n)
 }
 
-func TestDfa(t *testing.T) {
+func TestDfaShouldCorrectlyDecideIntegers(t *testing.T) {
     for modulus := 1; modulus < 200; modulus++ {
         dfa, err := DfaDivisibleBy(modulus)
         if err != nil {
